@@ -1,0 +1,107 @@
+/* Visível apenas na impressão */
+.star-print {
+  display: none;
+}
+
+@media print {
+  .star-print {
+    display: block;
+    margin-bottom: 5mm;
+  }
+
+  .star-print-header {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 4mm;
+    border-bottom: 1.5pt solid #333;
+    padding-bottom: 2mm;
+  }
+
+  .star-print-header h2 {
+    font-size: 11pt;
+    font-weight: 800;
+    color: #1e293b;
+    text-transform: uppercase;
+    letter-spacing: 0.5pt;
+    margin: 0;
+  }
+
+  .star-print-card {
+    border: 1pt solid #d1d5db;
+    border-radius: 4pt;
+    padding: 3mm 4mm;
+    margin-bottom: 3mm;
+    page-break-inside: avoid;
+    background: #fff;
+  }
+
+  .star-print-title-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 3mm;
+    margin-bottom: 2.5mm;
+  }
+
+  .star-print-num {
+    font-size: 14pt;
+    font-weight: 800;
+    color: #d1d5db;
+    line-height: 1;
+    flex-shrink: 0;
+    padding-top: 1pt;
+  }
+
+  .star-print-title {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 1.5mm;
+  }
+
+  .star-print-techs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5mm;
+  }
+
+  .star-print-tech {
+    font-size: 7pt;
+    font-weight: 600;
+    border: 0.75pt solid #9ca3af;
+    border-radius: 3pt;
+    padding: 0.5mm 2mm;
+    color: #4b5563;
+    background: #fff;
+  }
+
+  .star-print-steps {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2mm;
+    border-top: 0.75pt solid #e5e7eb;
+    padding-top: 2.5mm;
+  }
+
+  .star-print-step {
+    padding: 2mm 2.5mm;
+    border-left: 2pt solid #9ca3af;
+  }
+
+  .star-print-step-label {
+    display: block;
+    font-size: 7pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5pt;
+    color: #6b7280;
+    margin-bottom: 1mm;
+  }
+
+  .star-print-step-text {
+    font-size: 8pt;
+    color: #374151;
+    line-height: 1.55;
+    margin: 0;
+  }
+}

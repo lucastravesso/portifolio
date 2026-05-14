@@ -1,0 +1,430 @@
+/* ============================================================
+   PRINT STYLES — Currículo A4  (sem cores pesadas, economiza tinta)
+   ============================================================ */
+
+@media print {
+
+  /* ---------- Page setup ---------- */
+  @page {
+    size: A4;
+    margin: 12mm 15mm 12mm 15mm;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  html, body {
+    font-size: 10pt;
+    background: #fff !important;
+    color: #1e293b !important;
+  }
+
+  /* ---------- Ocultar elementos de tela ---------- */
+  .header-nav,
+  .footer,
+  .header-bg,
+  .star-stories,          /* versão interativa — substituída pelo StarPrint */
+  .availability-dot,
+  .print-btn {
+    display: none !important;
+  }
+
+  /* ---------- App / Main ---------- */
+  .app { background: #fff !important; }
+
+  .main {
+    max-width: 100% !important;
+    padding: 0 !important;
+    gap: 0 !important;
+  }
+
+  /* ---------- Sections ---------- */
+  .section {
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+    background: transparent !important;
+    page-break-inside: avoid;
+  }
+
+  /* ======================================================
+     HEADER — fundo escuro substituído por borda simples
+     ====================================================== */
+  .header {
+    background: #fff !important;
+    color: #1e293b !important;
+    padding: 0 0 4mm !important;
+    margin-bottom: 5mm;
+    border-bottom: 2pt solid #1e293b;
+    page-break-after: avoid;
+  }
+
+  .header-content {
+    padding: 0 !important;
+    gap: 5mm !important;
+  }
+
+  .avatar {
+    width: 64px !important;
+    height: 64px !important;
+    border: 1.5pt solid #9ca3af !important;
+    background: #f3f4f6 !important;
+    overflow: hidden !important;
+  }
+
+  .avatar-photo {
+    transform: scale(1.9) !important;
+    transform-origin: 20% 12% !important;
+  }
+
+  .header-name {
+    font-size: 18pt !important;
+    color: #1e293b !important;
+  }
+
+  .header-title {
+    font-size: 9pt !important;
+    color: #4b5563 !important;
+    margin-bottom: 2mm !important;
+  }
+
+  /* Stack badges — apenas borda, sem fundo */
+  .stack-badges { margin-bottom: 2mm !important; }
+
+  .stack-badge {
+    font-size: 6.5pt !important;
+    padding: 0.5mm 2mm !important;
+    background: #fff !important;
+    border: 0.75pt solid #9ca3af !important;
+    color: #374151 !important;
+    border-radius: 3pt !important;
+    text-transform: uppercase !important;
+  }
+
+  /* Contact chips — sem fundo */
+  .contact-chip {
+    background: #fff !important;
+    border: 0.75pt solid #d1d5db !important;
+    color: #374151 !important;
+    font-size: 7.5pt !important;
+    padding: 1mm 2.5mm !important;
+    border-radius: 3pt !important;
+  }
+
+  .contact-chip--linkedin {
+    background: #fff !important;
+    border-color: #9ca3af !important;
+  }
+
+  .contact-chip svg {
+    stroke: #6b7280 !important;
+    fill: none !important;
+  }
+
+  .contact-chip--linkedin svg {
+    fill: #6b7280 !important;
+    stroke: none !important;
+  }
+
+  /* ======================================================
+     SECTION HEADERS — linha fina, sem ícone colorido
+     ====================================================== */
+  .section-header {
+    margin-bottom: 3.5mm !important;
+    border-bottom: 1pt solid #9ca3af !important;
+    padding-bottom: 1.5mm !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .section-header h2 {
+    font-size: 10.5pt !important;
+    color: #1e293b !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5pt;
+  }
+
+  /* Ícone: apenas contorno, sem fundo colorido */
+  .section-icon {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 4px !important;
+    background: #fff !important;
+    border: 1pt solid #9ca3af !important;
+  }
+
+  .section-icon svg {
+    width: 12px !important;
+    height: 12px !important;
+    stroke: #4b5563 !important;
+  }
+
+  /* Ocultar badges extras do header de seção */
+  .star-badge,
+  .availability-badge {
+    display: none !important;
+  }
+
+  /* ======================================================
+     ABOUT
+     ====================================================== */
+  .about { margin-bottom: 4mm !important; }
+
+  /* Highlights — apenas borda fina, sem fundo azul */
+  .highlights-row {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 2mm !important;
+    margin-bottom: 3.5mm !important;
+  }
+
+  .highlight-card {
+    background: #fff !important;
+    border: 1pt solid #d1d5db !important;
+    padding: 2mm !important;
+    border-radius: 3pt !important;
+  }
+
+  .highlight-value {
+    font-size: 10pt !important;
+    color: #1e293b !important;
+    font-weight: 800 !important;
+  }
+
+  .highlight-label {
+    font-size: 7pt !important;
+    color: #6b7280 !important;
+  }
+
+  .about-grid {
+    grid-template-columns: 1.6fr 1fr !important;
+    gap: 5mm !important;
+  }
+
+  .about-summary p {
+    font-size: 9pt !important;
+    line-height: 1.6 !important;
+    color: #374151 !important;
+  }
+
+  .about-skills h3 {
+    font-size: 8.5pt !important;
+    color: #1e293b !important;
+    margin-bottom: 2mm !important;
+  }
+
+  .skill-item {
+    font-size: 8.5pt !important;
+    color: #374151 !important;
+  }
+
+  .skill-dot {
+    background: #6b7280 !important;
+  }
+
+  /* ======================================================
+     EXPERIENCE
+     ====================================================== */
+  .experience { margin-bottom: 4mm !important; }
+
+  .timeline-marker { display: none !important; }
+
+  .timeline-item {
+    gap: 0 !important;
+    margin-bottom: 3mm;
+    page-break-inside: avoid;
+  }
+
+  .timeline-card {
+    border: none !important;
+    padding: 0 0 3mm 3mm !important;
+    margin-bottom: 0 !important;
+    border-left: 1.5pt solid #9ca3af !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  .job-role {
+    font-size: 10pt !important;
+    color: #1e293b !important;
+  }
+
+  .job-company {
+    font-size: 8.5pt !important;
+    color: #4b5563 !important;
+  }
+
+  /* Period badge — sem fundo colorido */
+  .job-period {
+    font-size: 7.5pt !important;
+    background: #fff !important;
+    color: #4b5563 !important;
+    border: 0.75pt solid #9ca3af !important;
+    padding: 0.5mm 2.5mm !important;
+    border-radius: 3pt !important;
+  }
+
+  .job-highlights li {
+    font-size: 8.5pt !important;
+    color: #4b5563 !important;
+    line-height: 1.5 !important;
+  }
+
+  .job-highlights li::before {
+    color: #6b7280 !important;
+  }
+
+  /* ======================================================
+     EDUCATION
+     ====================================================== */
+  .education { margin-bottom: 4mm !important; }
+
+  .edu-card {
+    border: none !important;
+    padding: 1.5mm 0 1.5mm 3mm !important;
+    border-left: 1.5pt solid #9ca3af !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
+  .edu-badge { display: none !important; }
+
+  .edu-type {
+    font-size: 7pt !important;
+    color: #6b7280 !important;
+  }
+
+  .edu-title {
+    font-size: 10pt !important;
+    color: #1e293b !important;
+  }
+
+  .edu-institution,
+  .edu-period {
+    font-size: 8pt !important;
+    color: #6b7280 !important;
+  }
+
+  /* Status badge — sem fundo verde */
+  .edu-status--done {
+    background: #fff !important;
+    color: #4b5563 !important;
+    border: 0.75pt solid #9ca3af !important;
+    font-size: 7pt !important;
+  }
+
+  /* Certifications */
+  .cert-grid {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2.5mm !important;
+  }
+
+  .cert-card {
+    border: 1pt solid #d1d5db !important;
+    padding: 2mm 2.5mm !important;
+    border-radius: 3pt !important;
+    background: #fff !important;
+    page-break-inside: avoid;
+  }
+
+  .cert-title {
+    font-size: 8.5pt !important;
+    color: #1e293b !important;
+  }
+
+  .cert-institution,
+  .cert-period {
+    font-size: 7.5pt !important;
+    color: #6b7280 !important;
+  }
+
+  .cert-desc {
+    font-size: 7.5pt !important;
+    color: #6b7280 !important;
+    line-height: 1.4 !important;
+  }
+
+  /* ======================================================
+     TECHNOLOGIES
+     ====================================================== */
+  .technologies { margin-bottom: 4mm !important; }
+
+  .tech-group {
+    gap: 2mm !important;
+    margin-bottom: 1.5mm;
+  }
+
+  /* Category label — sem fundo colorido */
+  .tech-category-label {
+    font-size: 7pt !important;
+    padding: 0.5mm 2mm !important;
+    min-width: 75px !important;
+    background: #fff !important;
+    border: 0.75pt solid #9ca3af !important;
+    color: #374151 !important;
+    border-radius: 3pt !important;
+  }
+
+  /* Tech tags — apenas borda */
+  .tech-tag {
+    font-size: 7.5pt !important;
+    padding: 0.5mm 2mm !important;
+    border-radius: 3pt !important;
+    border: 0.75pt solid #9ca3af !important;
+    background: #fff !important;
+    color: #374151 !important;
+  }
+
+  /* ======================================================
+     LANGUAGES
+     ====================================================== */
+  .languages { margin-bottom: 0 !important; }
+
+  .lang-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 2.5mm !important;
+  }
+
+  .lang-card {
+    border: 1pt solid #d1d5db !important;
+    padding: 2mm 2.5mm !important;
+    border-radius: 3pt !important;
+    background: #fff !important;
+  }
+
+  .lang-name {
+    font-size: 9pt !important;
+    color: #1e293b !important;
+  }
+
+  .lang-level {
+    font-size: 7.5pt !important;
+    color: #6b7280 !important;
+  }
+
+  .lang-bar-bg {
+    height: 4px !important;
+    background: #e5e7eb !important;
+  }
+
+  .lang-bar-fill {
+    background: #6b7280 !important;   /* cinza em vez de azul */
+  }
+
+  .lang-percent {
+    font-size: 7pt !important;
+    color: #9ca3af !important;
+  }
+
+  /* ======================================================
+     PAGE BREAKS
+     ====================================================== */
+  .experience  { page-break-before: auto; }
+  .education   { page-break-before: auto; }
+  .star-print  { page-break-before: auto; }
+}
